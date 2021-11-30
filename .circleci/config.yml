@@ -11,4 +11,10 @@ jobs:
       - image: cimg/openjdk:11.0.4
     steps:
       - checkout
-      - run: java --version
+      #- run: java --version
+      - run:
+        name: Install dependencies
+        command: mvn install
+      - run:
+        name: Run Tests
+        command: mvn run test
